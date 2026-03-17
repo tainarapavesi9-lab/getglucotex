@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl-NL">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -7,21 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- =========================
-    SEO & ADS COMPLIANCE 2026
+    GOOGLE ADS COMPLIANCE 2026
     ========================= -->
-    <title>Glucotex | Natuurlijke Bloedsuikerondersteuning – Officiële Website</title>
-    <meta name="description" content="Neem vandaag nog de controle over uw bloedsuikerspiegel met Glucotex. Natuurlijke formule ontworpen om een evenwichtige glucose en dagelijkse energie te ondersteunen.">
+    <title>Glucotex | Natural Blood Sugar Support Formula – Official Website</title>
+    <meta name="description" content="Take control of your blood sugar today with Glucotex. A natural formula designed to support balanced glucose and daily energy levels.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://bloodsugarmethod.vercel.app/">
 
     <!-- FAVICON -->
     <link rel="icon" type="image/png" href="images/faviconV2-removebg-preview.png">
     <link rel="shortcut icon" type="image/png" href="images/faviconV2-removebg-preview.png">
-
-    <!-- Performance & Speed -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="image" href="images/glucotex2.png">
 
     <!-- UI ASSETS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -46,6 +41,8 @@
             color: var(--brand-text);
             overflow-x: hidden;
             margin: 0;
+            opacity: 0; 
+            transition: opacity 0.3s ease-in;
         }
 
         .ambient-layer {
@@ -57,8 +54,7 @@
             background-image: 
                 radial-gradient(at 0% 0%, rgba(127, 20, 17, 0.08) 0, transparent 50%), 
                 radial-gradient(at 100% 0%, rgba(15, 23, 42, 0.05) 0, transparent 40%),
-                radial-gradient(at 100% 100%, rgba(127, 20, 17, 0.05) 0, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(15, 23, 42, 0.05) 0, transparent 50%);
+                radial-gradient(at 100% 100%, rgba(127, 20, 17, 0.05) 0, transparent 50%);
         }
 
         .container-site {
@@ -82,30 +78,10 @@
             z-index: 10;
         }
 
-        .hero-title-block {
-            line-height: 0.95;
-            letter-spacing: -0.04em;
-        }
-
-        .title-line {
-            display: block;
-            font-size: clamp(2.4rem, 6vw, 4.5rem);
-            font-weight: 800;
-            color: var(--brand-text);
-        }
-
-        .title-accent {
-            color: var(--brand-accent);
-        }
-
-        .title-sub {
-            font-size: clamp(1.2rem, 3vw, 2.2rem);
-            font-weight: 800;
-            margin-top: 1rem;
-            display: block;
-            color: var(--brand-text);
-            opacity: 0.9;
-        }
+        .hero-title-block { line-height: 0.95; letter-spacing: -0.04em; }
+        .title-line { display: block; font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 800; color: var(--brand-text); }
+        .title-accent { color: var(--brand-accent); }
+        .title-sub { font-size: clamp(1.2rem, 3vw, 2.2rem); font-weight: 800; margin-top: 1rem; display: block; color: var(--brand-text); opacity: 0.9; }
 
         .btn-country {
             background-color: var(--brand-primary);
@@ -132,17 +108,10 @@
             border-color: var(--brand-accent);
         }
         
-        .country-flag {
-            width: 28px;
-            height: 20px;
-            object-fit: cover;
-            border-radius: 3px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+        .country-flag { width: 28px; height: 20px; object-fit: cover; border-radius: 3px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
 
         .product-image {
-            max-width: 100%;
-            height: auto;
+            max-width: 100%; height: auto;
             filter: drop-shadow(0 30px 60px rgba(127, 20, 17, 0.15));
             animation: float 6s ease-in-out infinite;
         }
@@ -151,80 +120,41 @@
             50% { transform: translateY(-15px); }
         }
 
-        /* --- REVIEWS SCROLLING TRACK --- */
         .reviews-marquee {
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-            padding: 2rem 0;
+            overflow: hidden; white-space: nowrap; position: relative; padding: 2rem 0;
             background: rgba(127, 20, 17, 0.03);
             border-top: 1px solid rgba(127, 20, 17, 0.05);
             border-bottom: 1px solid rgba(127, 20, 17, 0.05);
         }
 
-        .marquee-content {
-            display: inline-flex;
-            animation: scroll 40s linear infinite;
-        }
+        .marquee-content { display: inline-flex; animation: scroll 40s linear infinite; }
+        .marquee-content:hover { animation-play-state: paused; }
 
-        .marquee-content:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
         .review-card {
-            flex: 0 0 auto;
-            width: 320px;
-            margin: 0 1rem;
-            background: white;
-            padding: 1.5rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            white-space: normal;
+            flex: 0 0 auto; width: 320px; margin: 0 1rem; background: white; padding: 1.5rem;
+            border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); white-space: normal;
             border: 1px solid #f1f5f9;
         }
 
         footer {
-            background-color: var(--footer-bg);
-            color: #94A3B8;
-            padding: 4rem 0;
-            margin-top: 0; 
-            position: relative;
-            z-index: 50;
+            background-color: var(--footer-bg); color: #94A3B8; padding: 4rem 0;
+            position: relative; z-index: 50;
         }
         .footer-logo-img { height: 32px; filter: brightness(0) invert(1); }
         .fda-text-box {
-            background: rgba(255,255,255,0.02);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.05);
-            font-size: 11px;
-            line-height: 1.6;
+            background: rgba(255,255,255,0.02); padding: 1.5rem; border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05); font-size: 11px; line-height: 1.6;
         }
         .footer-nav-link {
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #64748B;
-            transition: color 0.2s;
-            background: none;
-            border: none;
-            cursor: pointer;
+            font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+            color: #64748B; transition: color 0.2s; background: none; border: none; cursor: pointer;
         }
         .footer-nav-link:hover { color: white; }
 
         @media (max-width: 1024px) {
-            .hero-content-wrapper {
-                display: flex;
-                flex-direction: column;
-                align-items: center; 
-                text-align: center;   
-            }
+            .hero-content-wrapper { display: flex; flex-direction: column; align-items: center; text-align: center; }
             .hero-badge-container { order: 1; margin-bottom: 1.5rem; justify-content: center; width: 100%; }
             .hero-title-block { order: 2; margin-bottom: 1rem; width: 100%; }
             .product-image-container { order: 3; margin: 1rem 0 2.5rem 0; display: flex; justify-content: center; width: 100%; }
@@ -235,23 +165,15 @@
             footer { padding: 3rem 1.5rem; }
             .review-card { width: 280px; }
         }
-
-        /* Modal Content Styling */
-        #modal-content h4 { font-weight: 800; color: #0F172A; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; }
-        #modal-content p { margin-bottom: 1rem; }
-        #modal-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
-        #modal-content li { margin-bottom: 0.25rem; }
     </style>
 </head>
 <body>
 
     <div class="ambient-layer"></div>
 
-    <!-- Header -->
     <header>
         <div class="container-site flex justify-between items-center">
-            <img src="images/glucotex-logo.png" alt="Glucotex Logo" class="h-8 lg:h-10 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <span class="hidden font-extrabold text-2xl tracking-tighter text-white uppercase">GLUCOTEX</span>
+            <img src="images/glucotex-logo.png" alt="Glucotex Logo" class="h-8 lg:h-10 object-contain">
         </div>
     </header>
 
@@ -259,182 +181,111 @@
         <div class="container-site">
             <div class="hero-content-wrapper lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
                 
-                <!-- CONTENT AREA -->
                 <div class="lg:col-span-7 flex flex-col">
-                    
-                    <!-- Trust Badge -->
                     <div class="hero-badge-container inline-flex items-center bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-gray-100 mx-auto lg:mx-0 lg:mb-8 shadow-sm">
                         <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest flex items-center gap-1.5">
-                            <span class="text-[#7F1411]">★★★★★</span> TRUSTED BY 76,289+ CUSTOMERS
+                            <span class="text-[#7F1411]">★★★★★</span> <span data-i18n="badge">TRUSTED BY 76,289+ CUSTOMERS</span>
                         </span>
                     </div>
 
-                    <!-- Headline -->
                     <div class="hero-title-block lg:text-left">
-                        <span class="title-line">Take Control</span>
-                        <span class="title-line">Of Your</span>
-                        <span class="title-line title-accent">Blood Sugar</span>
-                        <span class="title-line">Starting Today</span>
-                        <span class="title-sub">With Glucotex</span>
+                        <span class="title-line" data-i18n="h1_1">Take Control</span>
+                        <span class="title-line" data-i18n="h1_2">Of Your</span>
+                        <span class="title-line title-accent" data-i18n="h1_3">Blood Sugar</span>
+                        <span class="title-line" data-i18n="h1_4">Starting Today</span>
+                        <span class="title-sub" data-i18n="h1_sub">With Glucotex</span>
                     </div>
 
-                    <!-- PHOTO (Mobile Only) -->
                     <div class="product-image-container lg:hidden">
                         <img src="images/glucotex2.png" alt="Glucotex Formula" class="product-image max-w-[280px]">
                     </div>
                     
-                    <!-- Description -->
-                    <p class="hero-description text-base text-gray-500 max-w-lg leading-relaxed font-medium lg:text-left lg:mt-8">
+                    <p class="hero-description text-base text-gray-500 max-w-lg leading-relaxed font-medium lg:text-left lg:mt-8" data-i18n="description">
                         Struggling with energy crashes, cravings, or unstable glucose levels? Glucotex is designed to support balanced blood sugar, improve daily energy, and help you stay consistent — without complicated routines.
                     </p>
 
-                    <!-- CTA Buttons -->
                     <div class="cta-container flex flex-col gap-4 mb-12 lg:mt-10">
-                        <p class="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-[-8px] lg:text-left">SELECT YOUR COUNTRY:</p>
+                        <p class="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-[-8px] lg:text-left" data-i18n="select_country">SELECT YOUR COUNTRY:</p>
                         
-                        <!-- Netherlands Button -->
                         <a href="https://www.fasttrack37.com/PM7HK3TH/2T3Z6R1B/" class="btn-country">
                             <div class="flex items-center gap-3">
-                                <img src="https://flagcdn.com/w40/nl.png" class="country-flag" alt="Nederland">
-                                <span>🇳🇱 Bestel in Nederland</span>
+                                <img src="https://flagcdn.com/w40/nl.png" class="country-flag" alt="Netherlands">
+                                <span data-i18n="btn_nl">Bestel in Nederland</span>
                             </div>
                             <i data-feather="arrow-right" class="w-5 h-5 opacity-40"></i>
                         </a>
 
-                        <!-- Denmark Button -->
                         <a href="https://www.fasttrack37.com/PM7HK3TH/2W9JBT8C/" class="btn-country">
                             <div class="flex items-center gap-3">
-                                <img src="https://flagcdn.com/w40/dk.png" class="country-flag" alt="Denemarken">
-                                <span>🇩🇰 Bestil i Danmark</span>
+                                <img src="https://flagcdn.com/w40/dk.png" class="country-flag" alt="Denmark">
+                                <span data-i18n="btn_dk">Bestil i Danmark</span>
                             </div>
                             <i data-feather="arrow-right" class="w-5 h-5 opacity-40"></i>
                         </a>
                     </div>
 
-                    <!-- Trust Checklist -->
                     <div class="trust-row flex flex-wrap gap-x-8 gap-y-3 opacity-60">
                         <div class="flex items-center gap-1.5">
                             <i data-feather="shield" class="w-3 h-3 text-[#7F1411]"></i>
-                            <span class="text-[9px] font-bold uppercase tracking-widest text-slate-600">60-DAGEN GARANTIE</span>
+                            <span class="text-[9px] font-bold uppercase tracking-widest text-slate-600" data-i18n="trust1">60-DAY GUARANTEE</span>
                         </div>
                         <div class="flex items-center gap-1.5">
                             <i data-feather="check-circle" class="w-3 h-3 text-[#7F1411]"></i>
-                            <span class="text-[9px] font-bold uppercase tracking-widest text-slate-600">NATUURLIJKE FORMULE</span>
+                            <span class="text-[9px] font-bold uppercase tracking-widest text-slate-600" data-i18n="trust2">NATURAL FORMULA</span>
                         </div>
                         <div class="flex items-center gap-1.5">
                             <i data-feather="award" class="w-3 h-3 text-[#7F1411]"></i>
-                            <span class="text-[9px] font-bold uppercase tracking-widest text-slate-600">GMP GECERTIFICEERD</span>
+                            <span class="text-[9px] font-bold uppercase tracking-widest text-slate-600" data-i18n="trust3">GMP CERTIFIED</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- DESKTOP PHOTO -->
                 <div class="hidden lg:flex lg:col-span-5 justify-end">
-                    <img src="images/glucotex2.png" 
-                         alt="Glucotex Formula" 
-                         class="product-image max-w-[480px]">
+                    <img src="images/glucotex2.png" alt="Glucotex Formula" class="product-image max-w-[480px]">
                 </div>
-
             </div>
         </div>
     </main>
 
-    <!-- REVIEWS MARQUEE SECTION -->
     <section class="reviews-marquee">
         <div class="container-site mb-6">
-            <h2 class="text-center font-extrabold text-xl uppercase tracking-tighter text-slate-800">Wat onze klanten zeggen</h2>
+            <h2 class="text-center font-extrabold text-xl uppercase tracking-tighter text-slate-800" data-i18n="reviews_title">What our customers say</h2>
         </div>
-        <div class="marquee-content">
-            <!-- Review items (Original set) -->
-            <div class="review-card">
-                <div class="flex items-center gap-1 text-amber-500 mb-2"><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i></div>
-                <p class="text-xs font-semibold text-slate-800 mb-2">Mark V. – Amsterdam</p>
-                <p class="text-xs leading-relaxed text-slate-500 italic">“Na een paar weken merkte ik dat mijn energieniveau stabieler bleef gedurende de dag. Geen grote pieken en dalen meer.”</p>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 text-amber-500 mb-2"><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i></div>
-                <p class="text-xs font-semibold text-slate-800 mb-2">Sophie L. – Utrecht</p>
-                <p class="text-xs leading-relaxed text-slate-500 italic">“Het is makkelijk in mijn dagelijkse routine te passen. Voelt goed om iets te hebben dat mijn lichaam ondersteunt zonder gedoe.”</p>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 text-amber-500 mb-2"><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i></div>
-                <p class="text-xs font-semibold text-slate-800 mb-2">Thomas K. – Rotterdam</p>
-                <p class="text-xs leading-relaxed text-slate-500 italic">“Ik was sceptisch in het begin, maar het voelt degelijk en consistent. Geen extreme claims, gewoon stabiele ondersteuning.”</p>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 text-amber-500 mb-2"><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i></div>
-                <p class="text-xs font-semibold text-slate-800 mb-2">Emma D. – Copenhagen</p>
-                <p class="text-xs leading-relaxed text-slate-500 italic">“Efter et par uger føles det som om min krop reagerer mere stabilt i løbet af dagen. Let at tage og passer fint ind i min rutine.”</p>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 text-amber-500 mb-2"><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i></div>
-                <p class="text-xs font-semibold text-slate-800 mb-2">Lars M. – Aarhus</p>
-                <p class="text-xs leading-relaxed text-slate-500 italic">“Det jeg kan lide er, at det er simpelt. Ingen komplicerede planer – bare daglig støtte, som giver mening over tid.”</p>
-            </div>
-            
-            <!-- Duplicated set for infinite loop -->
-            <div class="review-card">
-                <div class="flex items-center gap-1 text-amber-500 mb-2"><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i></div>
-                <p class="text-xs font-semibold text-slate-800 mb-2">Mark V. – Amsterdam</p>
-                <p class="text-xs leading-relaxed text-slate-500 italic">“Na een paar weken merkte ik dat mijn energieniveau stabieler bleef gedurende de dag. Geen grote pieken en dalen meer.”</p>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 text-amber-500 mb-2"><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i></div>
-                <p class="text-xs font-semibold text-slate-800 mb-2">Sophie L. – Utrecht</p>
-                <p class="text-xs leading-relaxed text-slate-500 italic">“Het is makkelijk in mijn dagelijkse routine te passen. Voelt goed om iets te hebben dat mijn lichaam ondersteunt zonder gedoe.”</p>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 text-amber-500 mb-2"><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i></div>
-                <p class="text-xs font-semibold text-slate-800 mb-2">Thomas K. – Rotterdam</p>
-                <p class="text-xs leading-relaxed text-slate-500 italic">“Ik was sceptisch in het begin, maar het voelt degelijk en consistent. Geen extreme claims, gewoon stabiele ondersteuning.”</p>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 text-amber-500 mb-2"><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i></div>
-                <p class="text-xs font-semibold text-slate-800 mb-2">Emma D. – Copenhagen</p>
-                <p class="text-xs leading-relaxed text-slate-500 italic">“Efter et par uger føles det som om min krop reagerer mere stabilt i løbet af dagen. Let at tage og passer fint ind i min rutine.”</p>
-            </div>
-            <div class="review-card">
-                <div class="flex items-center gap-1 text-amber-500 mb-2"><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i><i data-feather="star" class="w-3 h-3 fill-current"></i></div>
-                <p class="text-xs font-semibold text-slate-800 mb-2">Lars M. – Aarhus</p>
-                <p class="text-xs leading-relaxed text-slate-500 italic">“Det jeg kan lide er, at det er simpelt. Ingen komplicerede planer – bare daglig støtte, som giver mening over tid.”</p>
-            </div>
-        </div>
+        <div class="marquee-content" id="reviews-track"></div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container-site">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
                 <div class="lg:col-span-4 space-y-6">
-                    <img src="images/glucotex-logo.png" alt="Glucotex Logo" class="footer-logo-img object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <p class="text-[12px] leading-relaxed max-w-xs text-slate-500">
-                        Toegewijd aan het leveren van producten van topkwaliteit en uitstekende klantenondersteuning, 7 dagen per week.
+                    <img src="images/glucotex-logo.png" alt="Glucotex Logo" class="footer-logo-img object-contain">
+                    <p class="text-[12px] leading-relaxed max-w-xs text-slate-500" data-i18n="footer_desc">
+                        Committed to providing premium quality products and excellent customer support, 7 days a week.
                     </p>
                     <div class="space-y-1">
-                        <p class="text-[9px] uppercase font-bold tracking-widest text-[#7F1411]">Officiële Ondersteuning</p>
+                        <p class="text-[9px] uppercase font-bold tracking-widest text-[#7F1411]" data-i18n="official_support">Official Support</p>
                         <p class="text-sm font-bold text-white">support@vivellify-support.com</p>
                     </div>
                 </div>
                 
                 <div class="lg:col-span-8">
                     <div class="fda-text-box text-slate-400">
-                        <p class="italic text-justify">
-                            <strong>Disclaimer:</strong> Raadpleeg uw arts voordat u supplementen neemt. Deze verklaringen zijn niet geëvalueerd door de Food and Drug Administration. Dit product is niet bedoeld om enige ziekte te diagnosticeren, behandelen, genezen of voorkomen. Individuele resultaten kunnen variëren.
+                        <p class="italic text-justify" data-i18n="disclaimer">
+                            <strong>Disclaimer:</strong> Consult your physician before taking supplements. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Bottom Bar -->
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
                 <nav class="flex flex-wrap justify-center gap-x-8 gap-y-3">
-                    <button onclick="openModal('shipping')" class="footer-nav-link">Verzending / Retourbeleid</button>
-                    <button onclick="openModal('terms')" class="footer-nav-link">Algemene Voorwaarden</button>
-                    <button onclick="openModal('privacy')" class="footer-nav-link">Privacybeleid</button>
-                    <button onclick="openModal('contact')" class="footer-nav-link">Neem Contact Op</button>
+                    <button onclick="openModal('shipping')" class="footer-nav-link" data-i18n="link_shipping">Shipping / Refund Policy</button>
+                    <button onclick="openModal('terms')" class="footer-nav-link" data-i18n="link_terms">Terms & Conditions</button>
+                    <button onclick="openModal('privacy')" class="footer-nav-link" data-i18n="link_privacy">Privacy Policy</button>
+                    <button onclick="openModal('contact')" class="footer-nav-link" data-i18n="link_contact">Contact Us</button>
                 </nav>
                 <div class="text-right">
-                    <p class="text-[10px] font-bold text-slate-700 uppercase tracking-widest">© 2026 GLUCOTEX. ALLE RECHTEN VOORBEHOUDEN.</p>
+                    <p class="text-[10px] font-bold text-slate-700 uppercase tracking-widest">© 2026 GLUCOTEX. ALL RIGHTS RESERVED.</p>
                 </div>
             </div>
         </div>
@@ -447,7 +298,7 @@
             <div class="flex min-h-full items-center justify-center p-4 sm:p-6">
                 <div class="relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col pointer-events-auto">
                     <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center sticky top-0 bg-white z-20">
-                        <h3 class="font-black text-slate-900 uppercase tracking-widest text-xs" id="modal-title">Juridische Informatie</h3>
+                        <h3 class="font-black text-slate-900 uppercase tracking-widest text-xs" id="modal-title">Information</h3>
                         <button onclick="closeModal()" class="p-2 hover:bg-slate-50 rounded-lg transition-colors">
                             <i data-feather="x" class="w-5 h-5"></i>
                         </button>
@@ -459,78 +310,93 @@
     </div>
 
     <script>
-        feather.replace();
-
-        const modalData = {
-            shipping: { 
-                title: "Verzending, Retour & Restitutiebeleid", 
-                content: `
-                    <h4>1. Verzending & Levering</h4>
-                    <p><strong>1.1 Verwerking & Levertijden:</strong> Alle bestellingen worden verwerkt binnen 1 tot 3 werkdagen. De levering duurt doorgaans 2 tot 14 werkdagen, afhankelijk van de bestemming. Zodra uw bestelling is verzonden, ontvangt u een e-mailbevestiging met een trackinglink.</p>
-                    <p><strong>1.2 Verzendkosten:</strong> Verzendkosten worden berekend bij het afrekenen. Douanerechten en invoerbelastingen zijn voor rekening van de klant.</p>
-                    
-                    <h4>2. Wijzigingen & Annuleringen</h4>
-                    <p>Bestellingen kunnen binnen een bedenktijd worden geannuleerd, mits ze nog niet zijn verwerkt of verzonden. Stuur een e-mail naar support@vivellify-support.com.</p>
-                    
-                    <h4>3. Retouren & 60-Dagen Garantie</h4>
-                    <p><strong>60-dagen geld-terug-garantie:</strong> Als u na ontvangst niet tevreden bent, bent u beschermd door onze garantie. U kunt tot twee flessen proberen. Als u niet tevreden bent, neem dan binnen 60 dagen contact op voor retourinstructies.</p>
-                    <p><strong>Voorwaarden voor volledige terugbetaling:</strong></p>
-                    <ul>
-                        <li>Maximaal twee flessen geopend/gebruikt.</li>
-                        <li>Extra flessen moeten verzegeld blijven.</li>
-                        <li>Alle flessen (ook lege) moeten worden teruggestuurd.</li>
-                        <li>Verzendkosten worden niet terugblade.</li>
-                    </ul>
-                    <p><strong>Retouradres:</strong> Shipbob, Kanaalzone 2, Havenweg 16, 6006 SM Weert, Nederland.</p>
-                ` 
+        const translations = {
+            en: {
+                badge: "TRUSTED BY 76,289+ CUSTOMERS",
+                h1_1: "Take Control", h1_2: "Of Your", h1_3: "Blood Sugar", h1_4: "Starting Today", h1_sub: "With Glucotex",
+                description: "Struggling with energy crashes, cravings, or unstable glucose levels? Glucotex is designed to support balanced blood sugar, improve daily energy, and help you stay consistent — without complicated routines.",
+                select_country: "SELECT YOUR COUNTRY:",
+                btn_nl: "Order in Netherlands", btn_dk: "Order in Denmark",
+                trust1: "60-DAY GUARANTEE", trust2: "NATURAL FORMULA", trust3: "GMP CERTIFIED",
+                reviews_title: "What our customers say",
+                footer_desc: "Committed to providing premium quality products and excellent customer support, 7 days a week.",
+                official_support: "Official Support",
+                disclaimer: "Disclaimer: Consult your physician before taking supplements. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+                link_shipping: "Shipping / Refund Policy", link_terms: "Terms & Conditions", link_privacy: "Privacy Policy", link_contact: "Contact Us"
             },
-            terms: { 
-                title: "Algemene Voorwaarden", 
-                content: `
-                    <h4>1. Algemeen</h4>
-                    <p>Deze voorwaarden zijn van toepassing op alle overeenkomsten geleverd door Vivello Solutions Ltd., 7 Compton Street, Ashbourne, Derbyshire, GB-DE61BX, Verenigd Koninkrijk.</p>
-                    <p>De zakelijke relatie wordt beheerst door het recht van de Bondsrepubliek Duitsland. Bevoegde rechtbank is Frankfurt am Main.</p>
-                    
-                    <h4>2. Totstandkoming Overeenkomst</h4>
-                    <p>De koopovereenkomst komt tot stand door de aanvaarding van de bestelling door de Verkoper. Bij betaling via PayPal of Creditcard komt de overeenkomst tot stand op het moment van betalingsbevestiging.</p>
-                    
-                    <h4>3. Prijzen & Betaling</h4>
-                    <p>Alle prijzen zijn inclusief wettelijke btw. Betalingsverwerking wordt uitgevoerd door aanbieders zoals PayPal, Klarna ou iDEAL overeenkomstig hun voorwaarden.</p>
-                ` 
+            nl: {
+                badge: "VERTROUWD DOOR 76.289+ KLANTEN",
+                h1_1: "Neem Controle", h1_2: "Over Je", h1_3: "Bloedsuiker", h1_4: "Vanaf Vandaag", h1_sub: "Met Glucotex",
+                description: "Moeite met energiedips, vreetbuien of onstabiele glucosewaarden? Glucotex is ontworpen om een evenwichtige bloedsuikerspiegel te ondersteunen en je dagelijkse energie te verbeteren.",
+                select_country: "SELECTEER JE LAND:",
+                btn_nl: "Bestel in Nederland", btn_dk: "Bestel in Denemarken",
+                trust1: "60 DAGEN GARANTIE", trust2: "NATUURLIJKE FORMULE", trust3: "GMP GECERTIFICEERD",
+                reviews_title: "Wat onze klanten zeggen",
+                footer_desc: "Toegewijd aan het leveren van hoogwaardige producten en uitstekende klantenondersteuning, 7 dagen per week.",
+                official_support: "Officiële Ondersteuning",
+                disclaimer: "Disclaimer: Raadpleeg uw arts voordat u supplementen gebruikt. Deze verklaringen zijn niet geëvalueerd door de FDA. Dit product is niet bedoeld om ziekten te diagnosticeren of te behandelen.",
+                link_shipping: "Verzending / Retourbeleid", link_terms: "Algemene Voorwaarden", link_privacy: "Privacybeleid", link_contact: "Neem Contact Op"
             },
-            privacy: { 
-                title: "Privacybeleid", 
-                content: `
-                    <h4>1. Toepassingsgebied</h4>
-                    <p>Dit beleid is van toepassing op gegevens verzameld op Glucotex (eigendom van Vivello Solutions Ltd). De verwerkingsverantwoordelijke is Vivello Solutions Ltd.</p>
-                    
-                    <h4>2. Gegevensverzameling</h4>
-                    <p>Wij verzamelen naam, adres, telefoonnummer en e-mailadres voor orderverwerking. Wij bewaren geen creditcardgegevens rechtstreeks.</p>
-                    
-                    <h4>3. Gebruik van Gegevens</h4>
-                    <p>Gegevens worden gebruikt om producten te leveren, identiteit te verifiëren en klantenservice te bieden.</p>
-                    
-                    <h4>4. Beveiliging</h4>
-                    <p>We hebben technische maatregelen genomen om uw gegevens te beveiligen tegen ongeoorloofde toegang.</p>
-                ` 
-            },
-            contact: { 
-                title: "Neem Contact Op", 
-                content: `
-                    <h4>Klantenservice</h4>
-                    <p>Onze productspecialisten staan klaar om uw vragen te beantwoorden.</p>
-                    <p><strong>E-mail:</strong> support@vivellify-support.com</p>
-                    <p><strong>Telefoon:</strong> +49 40 7430 2972</p>
-                    <p><strong>Adres:</strong> VIVELLO SOLUTIONS LTD, 7 Compton Street, Ashbourne, Derbyshire, UK, DE6 1BX</p>
-                    <p>Bereikbaar van maandag t/m friday van 9.00 tot 18.00 uur GMT.</p>
-                ` 
+            da: {
+                badge: "TILLID FRA 76.289+ KUNDER",
+                h1_1: "Tag Kontrol", h1_2: "Over Dit", h1_3: "Blodsukker", h1_4: "Fra I Dag", h1_sub: "Med Glucotex",
+                description: "Kæmper du med energinedbrud, trang eller ustabile glukoseniveauer? Glucotex er designet til at støtte balanceret blodsukker og forbedre din daglige energi.",
+                select_country: "VÆLG DIT LAND:",
+                btn_nl: "Bestil i Holland", btn_dk: "Bestil i Danmark",
+                trust1: "60 DAGES GARANTI", trust2: "NATURLIG FORMEL", trust3: "GMP CERTIFICERET",
+                reviews_title: "Hvad vores kunder siger",
+                footer_desc: "Forpligtet til at levere produkter af premium kvalitet og fremragende kundesupport 7 dage om ugen.",
+                official_support: "Officiel Support",
+                disclaimer: "Ansvarsfraskrivelse: Konsulter din læge før du tager kosttilskud. Disse udsagn er ikke blevet evalueret af FDA. Dette product er ikke beregnet til at diagnosticere eller behandle sygdom.",
+                link_shipping: "Forsendelse / Returpolitik", link_terms: "Vilkår & Betingelser", link_privacy: "Privatlivspolitik", link_contact: "Kontakt Os"
             }
         };
 
+        const reviewsData = {
+            nl: [
+                { name: "Mark V. – Amsterdam", text: "Na een paar weken merkte ik dat mijn energieniveau stabieler bleef gedurende de dag. Geen grote pieken en dalen meer." },
+                { name: "Sophie L. – Utrecht", text: "Het is makkelijk in mijn dagelijkse routine te passen. Voelt goed om iets te hebben dat mijn lichaam ondersteunt." },
+                { name: "Thomas K. – Rotterdam", text: "Ik was sceptisch in het begin, maar het voelt degelijk en consistent. Gewoon stabiele ondersteuning." }
+            ],
+            da: [
+                { name: "Emma D. – Copenhagen", text: "Efter et par uger føles det som om min krop reagerer mere stabilt i løbet af dagen. Let at tage." },
+                { name: "Lars M. – Aarhus", text: "Det jeg kan lide er, at det er simpelt. Ingen komplicerede planer – bare daglig støtte, som giver mening." }
+            ]
+        };
+
+        function initLanguage() {
+            const lang = navigator.language.split('-')[0];
+            const activeLang = translations[lang] ? lang : 'en';
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[activeLang][key]) el.innerText = translations[activeLang][key];
+            });
+
+            const track = document.getElementById('reviews-track');
+            const allReviews = [...reviewsData.nl, ...reviewsData.da];
+            const renderReviews = (list) => {
+                return list.map(r => `
+                    <div class="review-card">
+                        <div class="flex items-center gap-1 text-amber-500 mb-2">${'<i data-feather="star" class="w-3 h-3 fill-current"></i>'.repeat(5)}</div>
+                        <p class="text-xs font-semibold text-slate-800 mb-2">${r.name}</p>
+                        <p class="text-xs leading-relaxed text-slate-500 italic">“${r.text}”</p>
+                    </div>
+                `).join('');
+            };
+            track.innerHTML = renderReviews(allReviews) + renderReviews(allReviews);
+            
+            feather.replace();
+            document.body.style.opacity = '1';
+        }
+
+        window.addEventListener('DOMContentLoaded', initLanguage);
+
         function openModal(type) {
-            const data = modalData[type];
-            document.getElementById('modal-title').innerText = data.title;
-            document.getElementById('modal-content').innerHTML = data.content;
+            const lang = navigator.language.split('-')[0];
+            const activeLang = translations[lang] ? lang : 'en';
+            document.getElementById('modal-title').innerText = translations[activeLang]["link_" + type] || "Info";
+            document.getElementById('modal-content').innerText = "Detailed policies available at Vivello Solutions Ltd. contact for support.";
             document.getElementById('policy-modal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
             feather.replace();
@@ -540,8 +406,6 @@
             document.getElementById('policy-modal').classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
-
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
     </script>
 </body>
 </html>
